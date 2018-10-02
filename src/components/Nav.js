@@ -7,11 +7,11 @@ export default function Nav({ categories }) {
     // 遷移先パスの生成
     // - カテゴリIDが"1"の場合は /all
     // - それ以外は /category/カテゴリID
-    const to = category => {
+    const to = category => (
         category.id === '1'
             ? '/all'
-            : '/category/${category.id}'
-    }
+            : `/category/${category.id}`
+    );
 
     return (
         <ul>
