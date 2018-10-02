@@ -15,7 +15,7 @@ export default class Ranking extends React.Component {
         return (
             <div>
                 <h2>Ranking コンポーネント</h2>
-                <p>カテゴリーID: {categoryId}</p>
+                <p>カテゴリーID: {this.props.categoryId}</p>
             </div>
         )
     }
@@ -24,7 +24,7 @@ export default class Ranking extends React.Component {
 Ranking.propTypes = {
     categoryId: PropTypes.string,
     onMount: PropTypes.func.isRequired,
-    onUpdate: propTypes.func.isRequired
+    onUpdate: PropTypes.func.isRequired,
 };
 
 Ranking.defaultProps = {
