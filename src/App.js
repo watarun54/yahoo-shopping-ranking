@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 // import Ranking from './components/Ranking';
 import Ranking from './containers/Ranking';
 import Nav from './containers/Nav';
