@@ -1,17 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Ranking({ categoryId }) {
-    return (
-        <div>
-            <h2>Ranking コンポーネント</h2>
-            <p>カテゴリーID: {categoryId}</p>
-        </div>
-    )
+export default class Ranking extends React.Component {
+    componentWillMount() {
+        this.props.onMount(this.props.categoryId);
+    }
+    componentWillReceiveProps(nextProps) {
+        if (this.props.categoryId !== nextProps.categoryId) {
+            this.props.onUpdate(nextProps.categoryId);
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <h2>Ranking コンポーネント</h2>
+                <p>カテゴリーID: {categoryId}</p>
+            </div>
+        )
+    }
 }
 
 Ranking.propTypes = {
-    categoryId: PropTypes.string
+    categoryId: PropTypes.string,
+    onMount: PropTypes.func.isRequired,
+    onUpdate: propTypes.func.isRequired
 };
 
 Ranking.defaultProps = {
