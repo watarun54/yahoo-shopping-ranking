@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
     categoryId: ownProps.categoryId,
     // カテゴリ情報、ランキング情報をRankingコンポーネントに渡す
     category: state.Ranking.category,
-    Ranking: state.Ranking.ranking,
+    ranking: state.Ranking.ranking,
     error: state.Ranking.error
 });
 

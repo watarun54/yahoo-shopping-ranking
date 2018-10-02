@@ -1,4 +1,5 @@
 const initialState = {
+    
     //　カテゴリ情報
     //　本来はカテゴリID取得APIで取得すべき
     categories: [

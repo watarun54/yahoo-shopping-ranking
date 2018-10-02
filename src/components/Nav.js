@@ -26,7 +26,7 @@ export default function Nav({ categories }) {
         </ul>
     );
 }
-Nav.PropTypes = {
+Nav.propTypes = {
     // state.shopping.categoriesの構造
     categories: PropTypes.arrayOf(
         PropTypes.shape({
