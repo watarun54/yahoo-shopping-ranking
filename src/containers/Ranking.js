@@ -4,7 +4,11 @@ import * as actions from '../actions/Ranking';
 
 // Reducerを定義後に実装する
 const mapStateToProps = (state, ownProps) => ({
-    categoryId: ownProps.categoryId
+    categoryId: ownProps.categoryId,
+    // カテゴリ情報、ランキング情報をRankingコンポーネントに渡す
+    category: state.Ranking.category,
+    ranking: state.Ranking.ranking,
+    error: state.Ranking.error
 });
 
 const mapDispatchToProps = dispatch => ({
