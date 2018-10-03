@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 // import Ranking from './components/Ranking';
 import Ranking from './containers/Ranking';
 import Nav from './containers/Nav';
+import Reboot from 'material-ui/Reboot';
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -11,6 +12,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Reboot />
+
         <Nav />
 
         <Switch>
