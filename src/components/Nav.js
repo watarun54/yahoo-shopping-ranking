@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Drawer from 'material-ui/Drawer';
+import List, { ListItem, ListItemText } from 'material-ui/List';
 
 
 export default function Nav({ categories }) {
@@ -12,18 +14,22 @@ export default function Nav({ categories }) {
             ? '/all'
             : `/category/${category.id}`
     );
-
+    // - Drawer, List, ListItem, ListItemTextで実装
+    // - onClickでContainer Componentに各リンクの選択を通知
     return (
-        <ul>
-            {/* props.categoriesからリンク一覧を生成 */}
-            {categories.map(category => (
-                <li key={`nav-item-${category.id}`}>
-                    <Link to={to(category)}>
-                        {category.name}
-                    </Link>
-                </li>
-            ))}
-        </ul>
+        <Drawer type="permanent">
+            <List style={{ width: 240 }}>
+                {categories.map(category => (
+                    <ListItem
+                        button
+                        key={`menu-item-${category.id}`}
+                        onClick={() => onClick(to(category))}
+                    >
+                        <ListItemText primary={category.name} />
+                    </ListItem>
+                ))}
+            </List>
+        </Drawer>
     );
 }
 Nav.propTypes = {
@@ -33,5 +39,7 @@ Nav.propTypes = {
             id: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired
         })
-    ).isRequired
+    ).isRequired,
+    // onClickの追加
+    onClick: PropTypes.func.isRequired
 };
