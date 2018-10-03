@@ -5,7 +5,7 @@ import Drawer from 'material-ui/Drawer';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 
 
-export default function Nav({ categories }) {
+export default function Nav({ categories, onClick }) {
     // 遷移先パスの生成
     // - カテゴリIDが"1"の場合は /all
     // - それ以外は /category/カテゴリID
